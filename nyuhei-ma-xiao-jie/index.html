@@ -1,0 +1,405 @@
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>NYU黑马小结</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=b1ff53ef6d">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="Flying Orange">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="NYU黑马小结">
+    <meta property="og:description" content="项目简介 - 电子扬琴主要技术###--硬件技术：焊接，小到wii cam 摄像头模块0.5mm的焊盘间距，大到0805电阻电容IIC电平转换电路，都是我们一丝不苟焊接完成--软件技术：1. IR 红外摄像头wii cam的使用2. 压电传感3. Arduino 编程应用场景###很多小孩子都很有可能学习一到两种乐器，其中有很多，其实都是按照家长的意愿在学习。比如有的孩子可能天赋是钢琴，家长却让他学了二胡，有的孩子天赋是扬琴，家长却让学了萨克斯。如果能够在决定学习那种乐器之前就能发现孩子真正的兴趣所在，岂不是更好？我们以扬琴为例，在还没有决定是否学习之前，铺上一块扬琴桌布，先让孩子完成测试，看看是否有这方面的天赋。换一块架子鼓桌布，就可以测试一下是否有架子鼓方面的天赋。选择一种孩子真的有兴趣并且是天赋所在的乐器来进行学习，不但能让孩子发展的更好，更重要的是，这个发展的成长的过程是快乐的。比赛收获在整个比赛中，我用自带的恒温焊台和示波器，同何老大一起enable了压电传感部分、IIC电平转换、wii cam模块外围电路。和三名队友一起拼搏24小时，并一同坚持到最终的expo 以及 presentation。收获的不单是奖品，更是和队友一同奋斗的快乐和珍贵的记忆。">
+    <meta property="og:url" content="http://localhost:2368/nyuhei-ma-xiao-jie/">
+    <meta property="og:image" content="http://localhost:2368/content/images/2018/08/hackathon.jpeg">
+    <meta property="article:published_time" content="2018-08-19T02:58:35.000Z">
+    <meta property="article:modified_time" content="2018-08-19T02:58:35.000Z">
+    <meta property="article:tag" content="geek">
+    <meta property="article:tag" content="中文博客">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/ghost">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NYU黑马小结">
+    <meta name="twitter:description" content="项目简介 - 电子扬琴主要技术###--硬件技术：焊接，小到wii cam 摄像头模块0.5mm的焊盘间距，大到0805电阻电容IIC电平转换电路，都是我们一丝不苟焊接完成--软件技术：1. IR 红外摄像头wii cam的使用2. 压电传感3. Arduino 编程应用场景###很多小孩子都很有可能学习一到两种乐器，其中有很多，其实都是按照家长的意愿在学习。比如有的孩子可能天赋是钢琴，家长却让他学了二胡，有的孩子天赋是扬琴，家长却让学了萨克斯。如果能够在决定学习那种乐器之前就能发现孩子真正的兴趣所在，岂不是更好？我们以扬琴为例，在还没有决定是否学习之前，铺上一块扬琴桌布，先让孩子完成测试，看看是否有这方面的天赋。换一块架子鼓桌布，就可以测试一下是否有架子鼓方面的天赋。选择一种孩子真的有兴趣并且是天赋所在的乐器来进行学习，不但能让孩子发展的更好，更重要的是，这个发展的成长的过程是快乐的。比赛收获在整个比赛中，我用自带的恒温焊台和示波器，同何老大一起enable了压电传感部分、IIC电平转换、wii cam模块外围电路。和三名队友一起拼搏24小时，并一同坚持到最终的expo 以及 presentation。收获的不单是奖品，更是和队友一同奋斗的快乐和珍贵的记忆。">
+    <meta name="twitter:url" content="http://localhost:2368/nyuhei-ma-xiao-jie/">
+    <meta name="twitter:image" content="http://localhost:2368/content/images/2018/08/hackathon.jpeg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Orange">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="geek, 中文博客">
+    <meta name="twitter:site" content="@tryghost">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="257">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Flying Orange",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Orange",
+        "url": "http://localhost:2368/author/orange/",
+        "sameAs": []
+    },
+    "headline": "NYU黑马小结",
+    "url": "http://localhost:2368/nyuhei-ma-xiao-jie/",
+    "datePublished": "2018-08-19T02:58:35.000Z",
+    "dateModified": "2018-08-19T02:58:35.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://localhost:2368/content/images/2018/08/hackathon.jpeg",
+        "width": 600,
+        "height": 257
+    },
+    "keywords": "geek, 中文博客",
+    "description": "项目简介 - 电子扬琴主要技术###--硬件技术：焊接，小到wii cam 摄像头模块0.5mm的焊盘间距，大到0805电阻电容IIC电平转换电路，都是我们一丝不苟焊接完成--软件技术：1. IR 红外摄像头wii cam的使用2. 压电传感3. Arduino 编程应用场景###很多小孩子都很有可能学习一到两种乐器，其中有很多，其实都是按照家长的意愿在学习。比如有的孩子可能天赋是钢琴，家长却让他学了二胡，有的孩子天赋是扬琴，家长却让学了萨克斯。如果能够在决定学习那种乐器之前就能发现孩子真正的兴趣所在，岂不是更好？我们以扬琴为例，在还没有决定是否学习之前，铺上一块扬琴桌布，先让孩子完成测试，看看是否有这方面的天赋。换一块架子鼓桌布，就可以测试一下是否有架子鼓方面的天赋。选择一种孩子真的有兴趣并且是天赋所在的乐器来进行学习，不但能让孩子发展的更好，更重要的是，这个发展的成长的过程是快乐的。比赛收获在整个比赛中，我用自带的恒温焊台和示波器，同何老大一起enable了压电传感部分、IIC电平转换、wii cam模块外围电路。和三名队友一起拼搏24小时，并一同坚持到最终的expo 以及 presentation。收获的不单是奖品，更是和队友一同奋斗的快乐和珍贵的记忆。",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script src="../public/ghost-sdk.js?v=b1ff53ef6d"></script>
+<script>
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "862345dbb066"
+});
+</script>
+    <meta name="generator" content="Ghost 2.0">
+    <link rel="alternate" type="application/rss+xml" title="Flying Orange" href="../rss/index.html">
+    <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/gruvbox-dark.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+</head>
+<body class="post-template tag-geek tag-zhong-wen-bo-ke">
+
+    <div class="site-wrapper">
+
+        
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">Flying Orange</a>
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="../">Home</a></li>
+    <li class="nav-python" role="menuitem"><a href="../tag/python/">Python</a></li>
+    <li class="nav-golang" role="menuitem"><a href="../tag/golang/">Golang</a></li>
+    <li class="nav-docker" role="menuitem"><a href="../tag/docker/">Docker</a></li>
+    <li class="nav-php" role="menuitem"><a href="../tag/php/">PHP</a></li>
+    <li class="nav-" role="menuitem"><a href="../tag/zhong-wen-bo-ke/">中文博客</a></li>
+    <li class="nav-about" role="menuitem"><a href="../about/">About</a></li>
+</ul>
+
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+                <a class="social-link social-link-fb" href="https://www.facebook.com/ghost" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
+</a>
+                <a class="social-link social-link-tw" href="https://twitter.com/tryghost" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg>
+</a>
+        </div>
+            <a class="rss-button" href="https://feedly.com/i/subscription/feed/http://localhost:2368/rss/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"></circle><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"></path></svg>
+</a>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post tag-geek tag-zhong-wen-bo-ke ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2018-08-19">19 August 2018</time>
+                        <span class="date-divider">/</span> <a href="../tag/geek/">geek</a>
+                </section>
+                <h1 class="post-full-title">NYU黑马小结</h1>
+            </header>
+
+            <figure class="post-full-image" style="background-image: url(../content/images/2018/08/hackathon.jpeg)">
+            </figure>
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <hr><h2 id="-">项目简介 - 电子扬琴</h2><h3 id="--1">主要技术###</h3><p>--硬件技术：焊接，小到wii cam 摄像头模块0.5mm的焊盘间距，大到0805电阻电容IIC电平转换电路，都是我们一丝不苟焊接完成<br></p><figure class="kg-image-card"><img src="http://7xjxqh.com2.z0.glb.clouddn.com/nyupic.jpg" class="kg-image" alt="pic"></figure><figure class="kg-image-card"><img src="http://7xjxqh.com2.z0.glb.clouddn.com/zuopin.jpg" class="kg-image" alt="pic"></figure><p><br>--软件技术：<br>1. IR 红外摄像头wii cam的使用<br>2. 压电传感<br>3. Arduino 编程</p><h3 id="--2">应用场景###</h3><p>很多小孩子都很有可能学习一到两种乐器，其中有很多，其实都是按照家长的意愿在学习。比如有的孩子可能天赋是钢琴，家长却让他学了二胡，有的孩子天赋是扬琴，家长却让学了萨克斯。如果能够在决定学习那种乐器之前就能发现孩子真正的兴趣所在，岂不是更好？<br>我们以扬琴为例，在还没有决定是否学习之前，铺上一块扬琴桌布，先让孩子完成测试，看看是否有这方面的天赋。换一块架子鼓桌布，就可以测试一下是否有架子鼓方面的天赋。<br>选择一种孩子真的有兴趣并且是天赋所在的乐器来进行学习，不但能让孩子发展的更好，更重要的是，这个发展的成长的过程是快乐的。</p><h2 id="--3">比赛收获</h2><p>在整个比赛中，我用自带的恒温焊台和示波器，同何老大一起enable了压电传感部分、IIC电平转换、wii cam模块外围电路。<br>和三名队友一起拼搏24小时，并一同坚持到最终的expo 以及 presentation。收获的不单是奖品，更是和队友一同奋斗的快乐和珍贵的记忆。<br>我们做的项目跟硬件相关性比较大，我们自带了恒温焊台以及示波器等设备，在整个项目中起到了非常大的作用，增进了基本功。<br>从项目的选题直到最后做出来，我们的领袖&amp;PM飞飞姐非常认真的帮我们做好了规划，思路清晰，目标明确，保证了我们能在24小时完成。<br>而在presentation和expo的时候，领袖光芒再次绽放，不管是一个评委的评审，还是百人的expo，都能收放自如临危不乱，将我们的24小时的工作与努力完美地展现给每一个观众、评委。</p><h2 id="--4">期待提高</h2><p>事先准备的较少，可以提前思考一下会做什么东西，哪些工具可能用上的可能性比较大，事先准备好，以及，工欲善其事必先利其器，电脑、工具软件等都应该提前准备好。<br>下次如何做的更好：积极地思考，在日常工作生活中思考有可能存在的有用的创意点，同时也天马行空的思考一些点子，这样在参加黑马的时候有很多想法可以跟队友交流，另外也需要曾进自己各方面技术。</p><p>总结为一下几点：<br>1.强化技术部分，更加深入地了解开发的每一个环节，如何起步，如何测试，发现问题如何快速定位并解决。<br>2.多与其他人进行交流，了解别人的项目，包括项目的技术价值、创新点、进展。<br>3.更多地接触新鲜的技术，当下不同的技术层出不穷，从硬件到软件，从前端到后端，广泛接触研究，“好读书，不求甚解”。</p><h2 id="--5">后记</h2><p>回到学校，睡到第二天中午11点，总算是休整过来了，想想我们的项目，感觉还是有些不完善的地方，比如声音。虽然能有声音发出，但是并没有形成音阶，更没法让用户敲击出旋律。为什么呢？这是一个比较头疼的问题。在最后的2小时内，sommily就在解决这个问题，但是没有解决出来。现在静下心来，我来试试。打开Arduino IDE，导入<a href="http://playground.arduino.cc/Main/MIDILibrary">MIDI库</a>，测试一下</p><pre><code>    int m=60;
+    MIDI.sendNoteOn(m,120,7);
+    delay(500);
+    MIDI.sendNoteOff(m,0,7);
+    delay(500);
+</code></pre><p>发现可以播放出一个音符，回想起来，当时sommily一直没有解决的问题是就是这个 m 和真实的音符音高的对应关系。分析一下，这个 m 的最大值是127，而大一些的钢琴也就88键，所以很有可能一个相邻键位对应的m值相差是1。于是进行了如下的测试：</p><pre><code>    int m=61; // fa
+    MIDI.sendNoteOn(m,120,7);
+    delay(50);
+    MIDI.sendNoteOff(m,0,7);
+    delay(50);
+    m=63;  // so
+    MIDI.sendNoteOn(m,120,7);
+    delay(50);
+    MIDI.sendNoteOff(m,0,7);
+    delay(50);
+</code></pre><p>视听了一下效果，Ding！ 听起来好像是音符 Fa 和 So， 而最开始的m=60像是 Mi 。Bingo！验证了猜想，因为Mi的升音（升Mi）就是Fa，而#Fa（升Fa）对应的应该是就没有测到的62。<br>接下来继续验证，果然就是这样。<br>现场马拉松时候另一个没有完美解决的问题是：评分显示。冷静思考一下，因为MIDI的使用使得唯一的串口被占用，无法通过串口显示出评分，那怎么办？当时没有做出来。其实还有那么多数字IO口没有使用。如果使用7段数码管，那样两位数的分数就需要至少14个IO口，数量不够。对了，要使用<a href="http://arduino.cc/en/Tutorial/LiquidCrystal">1602液晶模块</a>的话就可以了！只需要4个数字IO口，并且Arduino库中自带1602的库，调用也很简单。</p>
+                </div>
+            </section>
+
+
+            <footer class="post-full-footer">
+
+
+                    
+<section class="author-card">
+        <span class="avatar-wrapper"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"></path></g></svg>
+</span>
+    <section class="author-card-content">
+        <h4 class="author-card-name"><a href="../author/orange/">Orange</a></h4>
+            <p>Read <a href="../author/orange/">more posts</a> by this author.</p>
+    </section>
+</section>
+<div class="post-full-footer-right">
+    <a class="author-card-button" href="../author/orange/">Read More</a>
+</div>
+
+
+            </footer>
+
+
+        </article>
+
+    </div>
+</main>
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+                <article class="read-next-card" style="background-image: url(../content/images/2018/08/geek.jpg)">
+                    <header class="read-next-card-header">
+                        <small class="read-next-card-header-sitetitle">— Flying Orange —</small>
+                        <h3 class="read-next-card-header-title"><a href="../tag/geek/">geek</a></h3>
+                    </header>
+                    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"></path></svg>
+</div>
+                    <div class="read-next-card-content">
+                        <ul>
+                            <li><a href="../eigen-matrixzai-yuan-you-da-xiao-shang-zeng-jia-lie/">Eigen Matrix在原有大小上增加列</a></li>
+                            <li><a href="../intel-galileo-gen2-you-xian-wang-luo-shang-wang/">Intel Galileo Gen2 有线网络上网</a></li>
+                            <li><a href="../ecsshang-proftpdpei-zhi-fang-fa/">ECS上proftpd配置方法</a></li>
+                        </ul>
+                    </div>
+                    <footer class="read-next-card-footer">
+                        <a href="../tag/geek/">See all 6 posts →</a>
+                    </footer>
+                </article>
+
+                <article class="post-card post tag-geek tag-zhong-wen-bo-ke">
+        <a class="post-card-image-link" href="../eigen-matrixzai-yuan-you-da-xiao-shang-zeng-jia-lie/">
+            <div class="post-card-image" style="background-image: url(../content/images/2018/08/cpp.jpg)"></div>
+        </a>
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="../eigen-matrixzai-yuan-you-da-xiao-shang-zeng-jia-lie/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">geek</span>
+                <h2 class="post-card-title">Eigen Matrix在原有大小上增加列</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>直接上代码 #include &lt;iostream&gt; #include &lt;Eigen/Core&gt; #include &lt;Eigen/Dense&gt; using namespace Eigen; using namespace std; #define ROWS 4  template &lt;typename Derived&gt; void vectorDistance(const EigenBase&amp;</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        Orange
+                    </div>
+
+                        <a href="../author/orange/" class="static-avatar author-profile-image"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"></path></g></svg>
+</a>
+                </li>
+            </ul>
+
+            <span class="reading-time">1 min read</span>
+
+        </footer>
+    </div>
+</article>
+
+                <article class="post-card post tag-geek tag-zhong-wen-bo-ke">
+        <a class="post-card-image-link" href="../intel-galileo-gen2-you-xian-wang-luo-shang-wang/">
+            <div class="post-card-image" style="background-image: url(../content/images/2018/08/intel.jpg)"></div>
+        </a>
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="../intel-galileo-gen2-you-xian-wang-luo-shang-wang/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">geek</span>
+                <h2 class="post-card-title">Intel Galileo Gen2 有线网络上网</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>在DeepinLinux中操作，首先要安装minicomsudo apt-get update sudo apt-get install minicom 然后配置minicomsudo -s minicom -s 配置好后连上板子，在终端输入minicom 来访问Intel Galileo2开发板，用户名root，无密码插上网线之后，进行如下操作来配置有线网络ifconfig eth0 down ifconfig eth0 192.168.199.173 netmash 255.255.255.0 up</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        Orange
+                    </div>
+
+                        <a href="../author/orange/" class="static-avatar author-profile-image"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"></path></g></svg>
+</a>
+                </li>
+            </ul>
+
+            <span class="reading-time">1 min read</span>
+
+        </footer>
+    </div>
+</article>
+
+        </div>
+    </div>
+</aside>
+
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="../">
+            <span>Flying Orange</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">—</span>
+    <div class="floating-header-title">NYU黑马小结</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"></path>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=NYU%E9%BB%91%E9%A9%AC%E5%B0%8F%E7%BB%93&amp;url=http://localhost:2368/nyuhei-ma-xiao-jie/" onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg>
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/nyuhei-ma-xiao-jie/" onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
+        </a>
+    </div>
+    <progress id="reading-progress" class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="../">Flying Orange</a> © 2018</section>
+                <nav class="site-footer-nav">
+                    <a href="../">Latest Posts</a>
+                    <a href="https://www.facebook.com/ghost" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://twitter.com/tryghost" target="_blank" rel="noopener">Twitter</a>
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=b1ff53ef6d"></script>
+
+
+    <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('#reading-progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+
+});
+</script>
+
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+</body>

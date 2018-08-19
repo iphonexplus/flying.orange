@@ -1,4 +1,177 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Flying Orange</title><description>Growing Up, Flying Up</description><link>http://localhost:2368/</link><image><url>http://localhost:2368/favicon.png</url><title>Flying Orange</title><link>http://localhost:2368/</link></image><generator>Ghost 2.0</generator><lastBuildDate>Sat, 18 Aug 2018 13:59:02 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Test open vswitch basic performance with iperf3 using Docker</title><description>&lt;p&gt;Use ovs(openvswitch) as docker network switch and test its performance.&lt;/p&gt;&lt;h2 id="install-ovs"&gt;Install OVS&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;sudo apt-get install openvswitch-switch&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="install-ovs-docker-utility"&gt;Install ovs-docker utility&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;cd /usr/bin
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Flying Orange</title><description>Growing Up, Flying Up</description><link>http://localhost:2368/</link><image><url>http://localhost:2368/favicon.png</url><title>Flying Orange</title><link>http://localhost:2368/</link></image><generator>Ghost 2.0</generator><lastBuildDate>Sun, 19 Aug 2018 04:25:40 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Eigen Matrix在原有大小上增加列</title><description>&lt;p&gt;直接上代码&lt;/p&gt;&lt;pre&gt;&lt;code&gt;
+#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;Eigen/Core&amp;gt;
+#include &amp;lt;Eigen/Dense&amp;gt;
+using namespace Eigen;
+using namespace std;
+
+#define ROWS 4 
+template &amp;lt;typename Derived&amp;gt;
+void vectorDistance(const EigenBase&amp;lt;Derived&amp;gt;&amp;amp; a, const EigenBase&amp;lt;Derived&amp;gt;&amp;amp; b)
+{
+    const ArrayXf A = a;
+    const&lt;/code&gt;&lt;/pre&gt;</description><link>http://localhost:2368/eigen-matrixzai-yuan-you-da-xiao-shang-zeng-jia-lie/</link><guid isPermaLink="false">5b78dd1e6b7fce0f556f1c41</guid><category>geek</category><category>中文博客</category><dc:creator>Orange</dc:creator><pubDate>Sun, 19 Aug 2018 03:03:51 GMT</pubDate><media:content url="http://localhost:2368/content/images/2018/08/cpp.jpg" medium="image"/><content:encoded>&lt;img src="http://localhost:2368/content/images/2018/08/cpp.jpg" alt="Eigen Matrix在原有大小上增加列"&gt;&lt;p&gt;直接上代码&lt;/p&gt;&lt;pre&gt;&lt;code&gt;
+#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;Eigen/Core&amp;gt;
+#include &amp;lt;Eigen/Dense&amp;gt;
+using namespace Eigen;
+using namespace std;
+
+#define ROWS 4 
+template &amp;lt;typename Derived&amp;gt;
+void vectorDistance(const EigenBase&amp;lt;Derived&amp;gt;&amp;amp; a, const EigenBase&amp;lt;Derived&amp;gt;&amp;amp; b)
+{
+    const ArrayXf A = a;
+    const ArrayXf B = b;
+    cout &amp;lt;&amp;lt; A &amp;lt;&amp;lt; B &amp;lt;&amp;lt; endl; 
+}
+
+
+float arrayXfDistance(const Ref&amp;lt;const ArrayXf&amp;gt; x, const Ref&amp;lt;const ArrayXf&amp;gt; y)
+{
+    return (float)sqrt((x-y).square().sum());
+}
+
+int main()
+{
+    int ids = 2; // person folder number
+    MatrixXf globalF(ROWS, ids); // global matrix
+    ArrayXf v(3);
+    ArrayXf w(3);
+    v &amp;lt;&amp;lt; 0,
+         5,
+         1;
+    w &amp;lt;&amp;lt; 3,
+         1.4,
+         1;
+    cout &amp;lt;&amp;lt; arrayXfDistance(w,v) &amp;lt;&amp;lt; endl;
+    cout &amp;lt;&amp;lt; w.matrix() &amp;lt;&amp;lt; endl;
+    vectorDistance(w,v);
+
+    MatrixXf m = MatrixXf::Random(ROWS, 2);
+    cout &amp;lt;&amp;lt; m &amp;lt;&amp;lt; endl;
+    globalF = m;
+    MatrixXf k = MatrixXf::Random(ROWS,1);
+    cout &amp;lt;&amp;lt; k &amp;lt;&amp;lt; endl;
+    for(int t=1; t&amp;lt;10; t++)
+    {
+        MatrixXf tmp(ROWS,ids+t-1);
+        tmp = globalF;
+        globalF.resize(ROWS, ids+t);  // change global matrix size
+        cout &amp;lt;&amp;lt; globalF.rows() &amp;lt;&amp;lt; " "  &amp;lt;&amp;lt; globalF.cols() &amp;lt;&amp;lt; endl;   
+        globalF &amp;lt;&amp;lt; tmp,k;  // append new feature in the end
+        cout &amp;lt;&amp;lt; globalF &amp;lt;&amp;lt; endl;
+        cout &amp;lt;&amp;lt; arrayXfDistance(globalF.col(1).array(),globalF.col(2).array()) &amp;lt;&amp;lt; endl;
+    }
+
+}
+                                                                             &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;编译命令：&lt;br&gt;&lt;br&gt;&lt;code&gt;g++ -I /home/user/workstation/eigen/eigen/ test3.cpp -o test3&lt;/code&gt;&lt;/p&gt;</content:encoded></item><item><title>NYU黑马小结</title><description>&lt;hr&gt;&lt;h2 id="-"&gt;项目简介 - 电子扬琴&lt;/h2&gt;&lt;h3 id="--1"&gt;主要技术###&lt;/h3&gt;&lt;p&gt;--硬件技术：焊接，小到wii cam 摄像头模块0.5mm的焊盘间距，大到0805电阻电容IIC电平转换电路，都是我们一丝不苟焊接完成&lt;br&gt;&lt;/p&gt;&lt;figure class="kg-image-card"&gt;&lt;img src="http://7xjxqh.com2.z0.glb.clouddn.com/nyupic.jpg" class="kg-image" alt="pic"&gt;&lt;/figure&gt;&lt;figure class="kg-image-card"&gt;&lt;img src="http://7xjxqh.com2.z0.glb.clouddn.com/zuopin.jpg" class="kg-image" alt="pic"&gt;&lt;/figure&gt;&lt;p&gt;&lt;br&gt;--软件技术：&lt;br&gt;1. IR 红外摄像头wii cam的使用&lt;br&gt;2. 压电传感&lt;br&gt;3. Arduino 编程&lt;/p&gt;&lt;h3 id="--2"&gt;应用场景###&lt;/h3&gt;&lt;p&gt;很多小孩子都很有可能学习一到两种乐器，其中有很多，其实都是按照家长的意愿在学习。比如有的孩子可能天赋是钢琴，家长却让他学了二胡，有的孩子天赋是扬琴，家长却让学了萨克斯。如果能够在决定学习那种乐器之前就能发现孩子真正的兴趣所在，岂不是更好？&lt;br&gt;我们以扬琴为例，在还没有决定是否学习之前，铺上一块扬琴桌布，先让孩子完成测试，看看是否有这方面的天赋。换一块架子鼓桌布，就可以测试一下是否有架子鼓方面的天赋。&lt;br&gt;选择一种孩子真的有兴趣并且是天赋所在的乐器来进行学习，不但能让孩子发展的更好，更重要的是，这个发展的成长的过程是快乐的。&lt;/p&gt;&lt;h2 id="--3"&gt;比赛收获&lt;/h2&gt;&lt;p&gt;在整个比赛中，我用自带的恒温焊台和示波器，同何老大一起enable了压电传感部分、IIC电平转换、wii cam模块外围电路。&lt;/p&gt;</description><link>http://localhost:2368/nyuhei-ma-xiao-jie/</link><guid isPermaLink="false">5b78dcb16b7fce0f556f1c3d</guid><category>geek</category><category>中文博客</category><dc:creator>Orange</dc:creator><pubDate>Sun, 19 Aug 2018 02:58:35 GMT</pubDate><media:content url="http://localhost:2368/content/images/2018/08/hackathon.jpeg" medium="image"/><content:encoded>&lt;hr&gt;&lt;h2 id="-"&gt;项目简介 - 电子扬琴&lt;/h2&gt;&lt;h3 id="--1"&gt;主要技术###&lt;/h3&gt;&lt;img src="http://localhost:2368/content/images/2018/08/hackathon.jpeg" alt="NYU黑马小结"&gt;&lt;p&gt;--硬件技术：焊接，小到wii cam 摄像头模块0.5mm的焊盘间距，大到0805电阻电容IIC电平转换电路，都是我们一丝不苟焊接完成&lt;br&gt;&lt;/p&gt;&lt;figure class="kg-image-card"&gt;&lt;img src="http://7xjxqh.com2.z0.glb.clouddn.com/nyupic.jpg" class="kg-image" alt="NYU黑马小结"&gt;&lt;/figure&gt;&lt;figure class="kg-image-card"&gt;&lt;img src="http://7xjxqh.com2.z0.glb.clouddn.com/zuopin.jpg" class="kg-image" alt="NYU黑马小结"&gt;&lt;/figure&gt;&lt;p&gt;&lt;br&gt;--软件技术：&lt;br&gt;1. IR 红外摄像头wii cam的使用&lt;br&gt;2. 压电传感&lt;br&gt;3. Arduino 编程&lt;/p&gt;&lt;h3 id="--2"&gt;应用场景###&lt;/h3&gt;&lt;p&gt;很多小孩子都很有可能学习一到两种乐器，其中有很多，其实都是按照家长的意愿在学习。比如有的孩子可能天赋是钢琴，家长却让他学了二胡，有的孩子天赋是扬琴，家长却让学了萨克斯。如果能够在决定学习那种乐器之前就能发现孩子真正的兴趣所在，岂不是更好？&lt;br&gt;我们以扬琴为例，在还没有决定是否学习之前，铺上一块扬琴桌布，先让孩子完成测试，看看是否有这方面的天赋。换一块架子鼓桌布，就可以测试一下是否有架子鼓方面的天赋。&lt;br&gt;选择一种孩子真的有兴趣并且是天赋所在的乐器来进行学习，不但能让孩子发展的更好，更重要的是，这个发展的成长的过程是快乐的。&lt;/p&gt;&lt;h2 id="--3"&gt;比赛收获&lt;/h2&gt;&lt;p&gt;在整个比赛中，我用自带的恒温焊台和示波器，同何老大一起enable了压电传感部分、IIC电平转换、wii cam模块外围电路。&lt;br&gt;和三名队友一起拼搏24小时，并一同坚持到最终的expo 以及 presentation。收获的不单是奖品，更是和队友一同奋斗的快乐和珍贵的记忆。&lt;br&gt;我们做的项目跟硬件相关性比较大，我们自带了恒温焊台以及示波器等设备，在整个项目中起到了非常大的作用，增进了基本功。&lt;br&gt;从项目的选题直到最后做出来，我们的领袖&amp;amp;PM飞飞姐非常认真的帮我们做好了规划，思路清晰，目标明确，保证了我们能在24小时完成。&lt;br&gt;而在presentation和expo的时候，领袖光芒再次绽放，不管是一个评委的评审，还是百人的expo，都能收放自如临危不乱，将我们的24小时的工作与努力完美地展现给每一个观众、评委。&lt;/p&gt;&lt;h2 id="--4"&gt;期待提高&lt;/h2&gt;&lt;p&gt;事先准备的较少，可以提前思考一下会做什么东西，哪些工具可能用上的可能性比较大，事先准备好，以及，工欲善其事必先利其器，电脑、工具软件等都应该提前准备好。&lt;br&gt;下次如何做的更好：积极地思考，在日常工作生活中思考有可能存在的有用的创意点，同时也天马行空的思考一些点子，这样在参加黑马的时候有很多想法可以跟队友交流，另外也需要曾进自己各方面技术。&lt;/p&gt;&lt;p&gt;总结为一下几点：&lt;br&gt;1.强化技术部分，更加深入地了解开发的每一个环节，如何起步，如何测试，发现问题如何快速定位并解决。&lt;br&gt;2.多与其他人进行交流，了解别人的项目，包括项目的技术价值、创新点、进展。&lt;br&gt;3.更多地接触新鲜的技术，当下不同的技术层出不穷，从硬件到软件，从前端到后端，广泛接触研究，“好读书，不求甚解”。&lt;/p&gt;&lt;h2 id="--5"&gt;后记&lt;/h2&gt;&lt;p&gt;回到学校，睡到第二天中午11点，总算是休整过来了，想想我们的项目，感觉还是有些不完善的地方，比如声音。虽然能有声音发出，但是并没有形成音阶，更没法让用户敲击出旋律。为什么呢？这是一个比较头疼的问题。在最后的2小时内，sommily就在解决这个问题，但是没有解决出来。现在静下心来，我来试试。打开Arduino IDE，导入&lt;a href="http://playground.arduino.cc/Main/MIDILibrary"&gt;MIDI库&lt;/a&gt;，测试一下&lt;/p&gt;&lt;pre&gt;&lt;code&gt;    int m=60;
+    MIDI.sendNoteOn(m,120,7);
+    delay(500);
+    MIDI.sendNoteOff(m,0,7);
+    delay(500);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;发现可以播放出一个音符，回想起来，当时sommily一直没有解决的问题是就是这个 m 和真实的音符音高的对应关系。分析一下，这个 m 的最大值是127，而大一些的钢琴也就88键，所以很有可能一个相邻键位对应的m值相差是1。于是进行了如下的测试：&lt;/p&gt;&lt;pre&gt;&lt;code&gt;    int m=61; // fa
+    MIDI.sendNoteOn(m,120,7);
+    delay(50);
+    MIDI.sendNoteOff(m,0,7);
+    delay(50);
+    m=63;  // so
+    MIDI.sendNoteOn(m,120,7);
+    delay(50);
+    MIDI.sendNoteOff(m,0,7);
+    delay(50);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;视听了一下效果，Ding！ 听起来好像是音符 Fa 和 So， 而最开始的m=60像是 Mi 。Bingo！验证了猜想，因为Mi的升音（升Mi）就是Fa，而#Fa（升Fa）对应的应该是就没有测到的62。&lt;br&gt;接下来继续验证，果然就是这样。&lt;br&gt;现场马拉松时候另一个没有完美解决的问题是：评分显示。冷静思考一下，因为MIDI的使用使得唯一的串口被占用，无法通过串口显示出评分，那怎么办？当时没有做出来。其实还有那么多数字IO口没有使用。如果使用7段数码管，那样两位数的分数就需要至少14个IO口，数量不够。对了，要使用&lt;a href="http://arduino.cc/en/Tutorial/LiquidCrystal"&gt;1602液晶模块&lt;/a&gt;的话就可以了！只需要4个数字IO口，并且Arduino库中自带1602的库，调用也很简单。&lt;/p&gt;</content:encoded></item><item><title>Intel Galileo Gen2 有线网络上网</title><description>&lt;hr&gt;&lt;p&gt;在DeepinLinux中操作，首先要安装minicom&lt;/p&gt;&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get install minicom
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后配置minicom&lt;/p&gt;&lt;pre&gt;&lt;code&gt;sudo -s
+minicom -s
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;配置好后连上板子，在终端输入&lt;/p&gt;&lt;pre&gt;&lt;code&gt;minicom
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;来访问Intel Galileo2开发板，用户名root，无密码&lt;br&gt;插上网线之后，进行如下操作来配置有线网络&lt;/p&gt;&lt;pre&gt;&lt;code&gt;ifconfig eth0 down
+ifconfig eth0 192.168.199.173 netmash 255.255.255.0 up
+ifup eth0
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;之后可以通过&lt;/p&gt;&lt;pre&gt;&lt;code&gt;ping www.baidu.com
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;来测试是否可用。&lt;/p&gt;</description><link>http://localhost:2368/intel-galileo-gen2-you-xian-wang-luo-shang-wang/</link><guid isPermaLink="false">5b78dc1c6b7fce0f556f1c39</guid><category>geek</category><category>中文博客</category><dc:creator>Orange</dc:creator><pubDate>Sun, 19 Aug 2018 02:56:24 GMT</pubDate><media:content url="http://localhost:2368/content/images/2018/08/intel.jpg" medium="image"/><content:encoded>&lt;hr&gt;&lt;img src="http://localhost:2368/content/images/2018/08/intel.jpg" alt="Intel Galileo Gen2 有线网络上网"&gt;&lt;p&gt;在DeepinLinux中操作，首先要安装minicom&lt;/p&gt;&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get install minicom
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后配置minicom&lt;/p&gt;&lt;pre&gt;&lt;code&gt;sudo -s
+minicom -s
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;配置好后连上板子，在终端输入&lt;/p&gt;&lt;pre&gt;&lt;code&gt;minicom
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;来访问Intel Galileo2开发板，用户名root，无密码&lt;br&gt;插上网线之后，进行如下操作来配置有线网络&lt;/p&gt;&lt;pre&gt;&lt;code&gt;ifconfig eth0 down
+ifconfig eth0 192.168.199.173 netmash 255.255.255.0 up
+ifup eth0
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;之后可以通过&lt;/p&gt;&lt;pre&gt;&lt;code&gt;ping www.baidu.com
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;来测试是否可用。&lt;/p&gt;</content:encoded></item><item><title>ECS上proftpd配置方法</title><description>&lt;hr&gt;&lt;p&gt;通过root身份登录，进行接下来的配置&lt;/p&gt;&lt;h2 id="-"&gt;添加用户组、添加用户&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;groupadd ftpusers
+useradd -d /mnt/site/site1 -g ftpusers -s /sbin/nologin weba
+passwd weba
+useradd -d /mnt/ftp -g ftpusers -s /sbin/nologin webb
+passwd webb
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="-proftpd-conf"&gt;修改配置文件  proftpd.conf&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;DefaultRoot ~
+&amp;lt;Directory "/mnt/site/site1/"&amp;gt;
+    &amp;lt;Limit ALL&amp;gt;
+        AllowUser weba
+        DenyALL
+    &amp;lt;/Limit&amp;&lt;/code&gt;&lt;/pre&gt;</description><link>http://localhost:2368/ecsshang-proftpdpei-zhi-fang-fa/</link><guid isPermaLink="false">5b78dba56b7fce0f556f1c35</guid><category>geek</category><category>中文博客</category><dc:creator>Orange</dc:creator><pubDate>Sun, 19 Aug 2018 02:53:45 GMT</pubDate><media:content url="http://localhost:2368/content/images/2018/08/cloud-1.jpeg" medium="image"/><content:encoded>&lt;hr&gt;&lt;img src="http://localhost:2368/content/images/2018/08/cloud-1.jpeg" alt="ECS上proftpd配置方法"&gt;&lt;p&gt;通过root身份登录，进行接下来的配置&lt;/p&gt;&lt;h2 id="-"&gt;添加用户组、添加用户&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;groupadd ftpusers
+useradd -d /mnt/site/site1 -g ftpusers -s /sbin/nologin weba
+passwd weba
+useradd -d /mnt/ftp -g ftpusers -s /sbin/nologin webb
+passwd webb
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="-proftpd-conf"&gt;修改配置文件  proftpd.conf&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;DefaultRoot ~
+&amp;lt;Directory "/mnt/site/site1/"&amp;gt;
+    &amp;lt;Limit ALL&amp;gt;
+        AllowUser weba
+        DenyALL
+    &amp;lt;/Limit&amp;gt;
+    &amp;lt;Limit CWD READ RETR DIRS&amp;gt;
+        AllowALL
+    &amp;lt;/Limit&amp;gt;
+&amp;lt;/Directory&amp;gt;
+
+&amp;lt;Directory "/mnt/ftp/"&amp;gt;
+    &amp;lt;Limit ALL&amp;gt;
+        AllowUser webb
+        DenyALL
+    &amp;lt;/Limit&amp;gt;
+    &amp;lt;Limit CWD READ RETR DIRS&amp;gt;
+        AllowALL
+    &amp;lt;/Limit&amp;gt;
+&amp;lt;/Directory&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考：&lt;br&gt;&lt;a href="http://blog.fens.me/linux-ftp-proftpd/"&gt;http://blog.fens.me/linux-ftp-proftpd/&lt;/a&gt;&lt;br&gt;&lt;a href="http://blog.csdn.net/sin90lzc/article/details/7525670"&gt;http://blog.csdn.net/sin90lzc/article/details/7525670&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title>阿里云ECS数据磁盘挂载</title><description>&lt;hr&gt;&lt;p&gt;首先查看所有磁盘&lt;/p&gt;&lt;pre&gt;&lt;code&gt;fdisk -l
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;发现系统盘已经挂载，还有个 /dev/xvdb 64.4GB没有挂载&lt;br&gt;使用&lt;/p&gt;&lt;pre&gt;&lt;code&gt;fdisk /dev/xvdb
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;并选择 n,p,1,最后输入wq回车保存退出&lt;/p&gt;&lt;p&gt;格式化磁盘&lt;/p&gt;&lt;pre&gt;&lt;code&gt;mkfs.ext3 /dev/xvdb1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使系统自动挂载该磁盘&lt;/p&gt;&lt;pre&gt;&lt;code&gt;echo "/dev/xvdb1 /mnt ext3 defaults 0 0" &amp;gt;&amp;gt; /etc/fstab
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这样系统启动的时候就会自动挂载&lt;/p&gt;&lt;p&gt;使用&lt;/p&gt;&lt;pre&gt;&lt;code&gt;mount -a
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;手动挂载一次即可。&lt;/p&gt;</description><link>http://localhost:2368/a-li-yun-ecsshu-ju-ci-pan-gua-zai/</link><guid isPermaLink="false">5b78db346b7fce0f556f1c31</guid><category>geek</category><category>中文博客</category><dc:creator>Orange</dc:creator><pubDate>Sun, 19 Aug 2018 02:52:42 GMT</pubDate><media:content url="http://localhost:2368/content/images/2018/08/cloud.jpeg" medium="image"/><content:encoded>&lt;hr&gt;&lt;img src="http://localhost:2368/content/images/2018/08/cloud.jpeg" alt="阿里云ECS数据磁盘挂载"&gt;&lt;p&gt;首先查看所有磁盘&lt;/p&gt;&lt;pre&gt;&lt;code&gt;fdisk -l
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;发现系统盘已经挂载，还有个 /dev/xvdb 64.4GB没有挂载&lt;br&gt;使用&lt;/p&gt;&lt;pre&gt;&lt;code&gt;fdisk /dev/xvdb
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;并选择 n,p,1,最后输入wq回车保存退出&lt;/p&gt;&lt;p&gt;格式化磁盘&lt;/p&gt;&lt;pre&gt;&lt;code&gt;mkfs.ext3 /dev/xvdb1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使系统自动挂载该磁盘&lt;/p&gt;&lt;pre&gt;&lt;code&gt;echo "/dev/xvdb1 /mnt ext3 defaults 0 0" &amp;gt;&amp;gt; /etc/fstab
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这样系统启动的时候就会自动挂载&lt;/p&gt;&lt;p&gt;使用&lt;/p&gt;&lt;pre&gt;&lt;code&gt;mount -a
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;手动挂载一次即可。&lt;/p&gt;</content:encoded></item><item><title>Arduino 使用的一些细节问题</title><description>&lt;hr&gt;&lt;p&gt;使用Arduino在做实验的时候，遇到了一些问题，这里总结一下。&lt;/p&gt;&lt;h2 id="midi-"&gt;MIDI 库&lt;/h2&gt;&lt;p&gt;从Arduino网上下载的&lt;a href="http://playground.arduino.cc/Main/MIDILibrary"&gt;MIDI库&lt;/a&gt; 在导入的时候应该先将解压出来的文件夹中的src文件夹的内容移到顶层，这样在导入之后，选择“skecth-&amp;gt;import library-&amp;gt;MIDI”才会自动导入头文件。&lt;br&gt;在使用MIDI库的时候，需要设置一下串口的波特率。这个很重要。&lt;br&gt;例如，导入example里的 MIDI_Basic_IO 例子，虽然可以编译下载，但是，在使用 &lt;a href="http://projectgus.github.io/hairless-midiserial/"&gt;HairlessMIDI&lt;/a&gt;进行播放声音的时候是没有声音的，需要在例子的setup()函数最后添加一句设置串口波特率的语句。最终例子代码应当如下：&lt;/p&gt;&lt;pre&gt;&lt;code&gt;#include &amp;lt;MIDI.h&amp;gt;
+
+MIDI_CREATE_DEFAULT_INSTANCE();
+
+#define LED 13   		    // LED pin on Arduino&lt;/code&gt;&lt;/pre&gt;</description><link>http://localhost:2368/untitled/</link><guid isPermaLink="false">5b78da806b7fce0f556f1c2d</guid><category>geek</category><category>中文博客</category><dc:creator>Orange</dc:creator><pubDate>Sun, 19 Aug 2018 02:49:40 GMT</pubDate><media:content url="http://localhost:2368/content/images/2018/08/arduino.jpg" medium="image"/><content:encoded>&lt;hr&gt;&lt;img src="http://localhost:2368/content/images/2018/08/arduino.jpg" alt="Arduino 使用的一些细节问题"&gt;&lt;p&gt;使用Arduino在做实验的时候，遇到了一些问题，这里总结一下。&lt;/p&gt;&lt;h2 id="midi-"&gt;MIDI 库&lt;/h2&gt;&lt;p&gt;从Arduino网上下载的&lt;a href="http://playground.arduino.cc/Main/MIDILibrary"&gt;MIDI库&lt;/a&gt; 在导入的时候应该先将解压出来的文件夹中的src文件夹的内容移到顶层，这样在导入之后，选择“skecth-&amp;gt;import library-&amp;gt;MIDI”才会自动导入头文件。&lt;br&gt;在使用MIDI库的时候，需要设置一下串口的波特率。这个很重要。&lt;br&gt;例如，导入example里的 MIDI_Basic_IO 例子，虽然可以编译下载，但是，在使用 &lt;a href="http://projectgus.github.io/hairless-midiserial/"&gt;HairlessMIDI&lt;/a&gt;进行播放声音的时候是没有声音的，需要在例子的setup()函数最后添加一句设置串口波特率的语句。最终例子代码应当如下：&lt;/p&gt;&lt;pre&gt;&lt;code&gt;#include &amp;lt;MIDI.h&amp;gt;
+
+MIDI_CREATE_DEFAULT_INSTANCE();
+
+#define LED 13   		    // LED pin on Arduino Uno
+
+void setup()
+{
+    pinMode(LED, OUTPUT);
+    MIDI.begin(7);          // Launch MIDI and listen to channel 4
+    Serial.begin(115200);   // very important
+}
+
+void loop()
+{
+
+        digitalWrite(LED,HIGH);
+        MIDI.sendNoteOn(42,127,7);  // Send a Note (pitch 42, velo 127 on channel 7)
+        delay(1000);		        // Wait for a second
+        MIDI.sendNoteOff(42,0,7);   // Stop the note
+        digitalWrite(LED,LOW);
+        delay(1000);	
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;date 2014年11月21日&lt;/p&gt;</content:encoded></item><item><title>Test open vswitch basic performance with iperf3 using Docker</title><description>&lt;p&gt;Use ovs(openvswitch) as docker network switch and test its performance.&lt;/p&gt;&lt;h2 id="install-ovs"&gt;Install OVS&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;sudo apt-get install openvswitch-switch&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="install-ovs-docker-utility"&gt;Install ovs-docker utility&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;cd /usr/bin
 wget https://raw.githubusercontent.com/openvswitch/ovs/master/utilities/ovs-docker
 chmod a+rwx ovs-docker&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="create-an-ovs-bridge"&gt;Create an OVS bridge&lt;/h2&gt;&lt;p&gt;Firstly, add an ovs bridge and then assign an&lt;/p&gt;</description><link>http://localhost:2368/test-open-vswitch-basic-performance-with-iperf3-using-docker/</link><guid isPermaLink="false">5b7820e466cf7f3af7fcd932</guid><category>docker</category><dc:creator>Orange</dc:creator><pubDate>Sat, 18 Aug 2018 13:44:41 GMT</pubDate><media:content url="http://localhost:2368/content/images/2018/08/network.jpg" medium="image"/><content:encoded>&lt;img src="http://localhost:2368/content/images/2018/08/network.jpg" alt="Test open vswitch basic performance with iperf3 using Docker"&gt;&lt;p&gt;Use ovs(openvswitch) as docker network switch and test its performance.&lt;/p&gt;&lt;h2 id="install-ovs"&gt;Install OVS&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;sudo apt-get install openvswitch-switch&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="install-ovs-docker-utility"&gt;Install ovs-docker utility&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;cd /usr/bin
 wget https://raw.githubusercontent.com/openvswitch/ovs/master/utilities/ovs-docker
