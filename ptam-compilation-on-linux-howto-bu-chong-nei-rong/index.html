@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>阿里云ECS数据磁盘挂载</title>
+    <title>PTAM Compilation on Linux-HowTo 补充内容</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,28 +16,28 @@
     
     <meta property="og:site_name" content="Flying Orange">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="阿里云ECS数据磁盘挂载">
-    <meta property="og:description" content='首先查看所有磁盘fdisk -l 发现系统盘已经挂载，还有个 /dev/xvdb 64.4GB没有挂载使用fdisk /dev/xvdb 并选择 n,p,1,最后输入wq回车保存退出格式化磁盘mkfs.ext3 /dev/xvdb1 使系统自动挂载该磁盘echo "/dev/xvdb1 /mnt ext3 defaults 0 0" &amp;gt;&amp;gt; /etc/fstab 这样系统启动的时候就会自动挂载使用mount -a 手动挂载一次即可。'>
-    <meta property="og:url" content="http://localhost:2368/a-li-yun-ecsshu-ju-ci-pan-gua-zai/">
-    <meta property="og:image" content="http://localhost:2368/content/images/2018/08/cloud.jpeg">
-    <meta property="article:published_time" content="2018-08-19T02:52:42.000Z">
-    <meta property="article:modified_time" content="2018-08-19T02:52:42.000Z">
+    <meta property="og:title" content="PTAM Compilation on Linux-HowTo 补充内容">
+    <meta property="og:description" content="Ubuntu上编译PTAM请参考PTAM Compilation on Linux-HowTo 以下为摘取内容The README.txt file shipped with the newest PTAM source code is really old (the cvs repositorys are gone for god’s sake) ! I struggled to get it done on my Linux Mint 15 with totally failure:–(However I made it with just pulling the bleeding">
+    <meta property="og:url" content="http://localhost:2368/ptam-compilation-on-linux-howto-bu-chong-nei-rong/">
+    <meta property="og:image" content="http://localhost:2368/content/images/2018/08/dip.jpeg">
+    <meta property="article:published_time" content="2018-08-26T09:51:49.000Z">
+    <meta property="article:modified_time" content="2018-08-26T09:53:58.000Z">
     <meta property="article:tag" content="geek">
     <meta property="article:tag" content="中文博客">
     
     <meta property="article:publisher" content="https://www.facebook.com/ghost">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="阿里云ECS数据磁盘挂载">
-    <meta name="twitter:description" content='首先查看所有磁盘fdisk -l 发现系统盘已经挂载，还有个 /dev/xvdb 64.4GB没有挂载使用fdisk /dev/xvdb 并选择 n,p,1,最后输入wq回车保存退出格式化磁盘mkfs.ext3 /dev/xvdb1 使系统自动挂载该磁盘echo "/dev/xvdb1 /mnt ext3 defaults 0 0" &amp;gt;&amp;gt; /etc/fstab 这样系统启动的时候就会自动挂载使用mount -a 手动挂载一次即可。'>
-    <meta name="twitter:url" content="http://localhost:2368/a-li-yun-ecsshu-ju-ci-pan-gua-zai/">
-    <meta name="twitter:image" content="http://localhost:2368/content/images/2018/08/cloud.jpeg">
+    <meta name="twitter:title" content="PTAM Compilation on Linux-HowTo 补充内容">
+    <meta name="twitter:description" content="Ubuntu上编译PTAM请参考PTAM Compilation on Linux-HowTo 以下为摘取内容The README.txt file shipped with the newest PTAM source code is really old (the cvs repositorys are gone for god’s sake) ! I struggled to get it done on my Linux Mint 15 with totally failure:–(However I made it with just pulling the bleeding">
+    <meta name="twitter:url" content="http://localhost:2368/ptam-compilation-on-linux-howto-bu-chong-nei-rong/">
+    <meta name="twitter:image" content="http://localhost:2368/content/images/2018/08/dip.jpeg">
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="Orange">
     <meta name="twitter:label2" content="Filed under">
     <meta name="twitter:data2" content="geek, 中文博客">
     <meta name="twitter:site" content="@tryghost">
-    <meta property="og:image:width" content="564">
-    <meta property="og:image:height" content="300">
+    <meta property="og:image:width" content="352">
+    <meta property="og:image:height" content="220">
     
     <script type="application/ld+json">
 {
@@ -59,18 +59,18 @@
         "url": "http://localhost:2368/author/orange/",
         "sameAs": []
     },
-    "headline": "阿里云ECS数据磁盘挂载",
-    "url": "http://localhost:2368/a-li-yun-ecsshu-ju-ci-pan-gua-zai/",
-    "datePublished": "2018-08-19T02:52:42.000Z",
-    "dateModified": "2018-08-19T02:52:42.000Z",
+    "headline": "PTAM Compilation on Linux-HowTo 补充内容",
+    "url": "http://localhost:2368/ptam-compilation-on-linux-howto-bu-chong-nei-rong/",
+    "datePublished": "2018-08-26T09:51:49.000Z",
+    "dateModified": "2018-08-26T09:53:58.000Z",
     "image": {
         "@type": "ImageObject",
-        "url": "http://localhost:2368/content/images/2018/08/cloud.jpeg",
-        "width": 564,
-        "height": 300
+        "url": "http://localhost:2368/content/images/2018/08/dip.jpeg",
+        "width": 352,
+        "height": 220
     },
     "keywords": "geek, 中文博客",
-    "description": "首先查看所有磁盘fdisk -l 发现系统盘已经挂载，还有个 /dev/xvdb 64.4GB没有挂载使用fdisk /dev/xvdb 并选择 n,p,1,最后输入wq回车保存退出格式化磁盘mkfs.ext3 /dev/xvdb1 使系统自动挂载该磁盘echo &quot;/dev/xvdb1 /mnt ext3 defaults 0 0&quot; &amp;gt;&amp;gt; /etc/fstab 这样系统启动的时候就会自动挂载使用mount -a 手动挂载一次即可。",
+    "description": "Ubuntu上编译PTAM请参考PTAM Compilation on Linux-HowTo 以下为摘取内容The README.txt file shipped with the newest PTAM source code is really old (the cvs repositorys are gone for god’s sake) ! I struggled to get it done on my Linux Mint 15 with totally failure:–(However I made it with just pulling the bleeding",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://localhost:2368/"
@@ -134,23 +134,78 @@ ghost.init({
 
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="2018-08-19">19 August 2018</time>
+                    <time class="post-full-meta-date" datetime="2018-08-26">26 August 2018</time>
                         <span class="date-divider">/</span> <a href="../tag/geek/">geek</a>
                 </section>
-                <h1 class="post-full-title">阿里云ECS数据磁盘挂载</h1>
+                <h1 class="post-full-title">PTAM Compilation on Linux-HowTo 补充内容</h1>
             </header>
 
-            <figure class="post-full-image" style="background-image: url(../content/images/2018/08/cloud.jpeg)">
+            <figure class="post-full-image" style="background-image: url(../content/images/2018/08/dip.jpeg)">
             </figure>
 
             <section class="post-full-content">
                 <div class="post-content">
-                    <hr><p>首先查看所有磁盘</p><pre><code>fdisk -l
-</code></pre><p>发现系统盘已经挂载，还有个 /dev/xvdb 64.4GB没有挂载<br>使用</p><pre><code>fdisk /dev/xvdb
-</code></pre><p>并选择 n,p,1,最后输入wq回车保存退出</p><p>格式化磁盘</p><pre><code>mkfs.ext3 /dev/xvdb1
-</code></pre><p>使系统自动挂载该磁盘</p><pre><code>echo "/dev/xvdb1 /mnt ext3 defaults 0 0" &gt;&gt; /etc/fstab
-</code></pre><p>这样系统启动的时候就会自动挂载</p><p>使用</p><pre><code>mount -a
-</code></pre><p>手动挂载一次即可。</p>
+                    <h2 id="ubuntu-ptam">Ubuntu上编译PTAM</h2><p>请参考<a href="http://hustcalm.me/blog/2013/09/27/ptam-compilation-on-linux-howto/">PTAM Compilation on Linux-HowTo</a> 以下为摘取内容</p><hr><p>The README.txt file shipped with the newest PTAM source code is really old (the cvs repositorys are gone for god’s sake) ! I struggled to get it done on my Linux Mint 15 with totally failure:–(</p><p>However I made it with just pulling the bleeding edge libs(I mean TooN,libCVD and Gvars3) from github, add a header file <code>&lt;unistd.h&gt;</code> to <code>Tracker.cc</code>, edit the <code>Makefile</code> about the linker flags(I will tell the details below), and I absolutely think that ‘share my experience to you’ is my duty.</p><p>I succeeded on <strong><strong>Linux Mint 15</strong></strong> and <strong><strong>Ubuntu 12.04</strong></strong>, other distros won’t be hard either:–)</p><p>Now, let’s start the journey!</p><h2 id="installation-the-required-dependencies"><strong>Installation the required dependencies</strong></h2><p><strong><strong>Note the versions of the installed packages may differ from distros and versions of the same distro, just choose the ones suitable for you!</strong></strong></p><h3 id="build-tools"><strong>Build Tools</strong></h3><pre><code>sudo apt-get update
+sudo apt-get install build-essential cmake pkg-config
+</code></pre><h3 id="boost-for-c-"><strong>Boost for C++</strong></h3><pre><code>sudo apt-get install libboost-dev libboost-doc
+</code></pre><h3 id="low-level-libraries-for-linear-algebra"><strong>Low level libraries for Linear Algebra</strong></h3><pre><code>sudo apt-get install liblapack-dev libblas-dev
+</code></pre><h3 id="image-i-o-camera-driver"><strong>Image I/O &amp;&amp; Camera Driver</strong></h3><pre><code>sudo apt-get install libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev libv4l-dev 
+</code></pre><h3 id="video-i-o-codec-display"><strong>Video I/O &amp;&amp; Codec &amp;&amp; Display</strong></h3><pre><code>sudo apt-get install libavcodec-dev libavformat-dev libavutil-dev libpostproc-dev libswscale-dev libavdevice-dev libsdl-dev
+sudo apt-get install libgtk2.0-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev 
+</code></pre><h3 id="opengl"><strong>OpenGL</strong></h3><pre><code>sudo apt-get install mesa-common-dev libgl1-mesa-dev libglu1-mesa-dev freeglut3-dev
+</code></pre><h2 id="installation-of-opencv"><strong>Installation of OpenCV</strong></h2><pre><code>cd thePathYouWant
+wget http://downloads.sourceforge.net/project/opencvlibrary/opencv-unix/2.4.6.1/opencv-2.4.6.1.tar.gz
+tar zxvf opencv-2.4.6.1.tar.gz
+cd opencv-2.4.6.1/
+mkdir release 
+cd release
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local ..
+make
+sudo make install
+</code></pre><p>You may want to alert the system about the new installed OpenCV libs,</p><pre><code>vi /etc/ld.so.conf
+add `include /usr/local/lib`
+sudo ldconfig
+</code></pre><p>Do this if you mannualy install other libraries when running into problems(as libcvd and Gvars3 discussed below).</p><p>After this, <strong><strong>OpenCV dependencies can now be linked with simply: <code>pkg-config opencv --cflags --libs</code></strong></strong></p><p>Really cool, huh?</p><h2 id="installation-of-toon-libcvd-gvars3"><strong>Installation of TooN &amp;&amp; libCVD &amp;&amp; Gvars3</strong></h2><p>You may want to get the source code by just pulling from github like this:</p><pre><code>#!/bin/bash
+echo " Now pulling TooN..."
+git clone git://github.com/edrosten/TooN.git
+echo " TooN done for good!"
+
+echo " Now pulling libcvd..."
+git clone git://github.com/edrosten/libcvd.git
+echo " libcvd done for good!"
+
+echo " Now pulling gvars3..."
+git clone git://github.com/edrosten/gvars.git
+echo " gvars3 done for good!"
+
+echo " All done."
+</code></pre><p>If this confuses you, just download the package like this:</p><pre><code>cd thePathYouWant
+wget http://www.edwardrosten.com/cvd/TooN-2.1.tar.gz
+wget http://www.edwardrosten.com/cvd/libcvd-20121025.tar.gz
+wget http://www.edwardrosten.com/cvd/gvars-3.0.tar.gz
+</code></pre><p><strong><strong>Note the versions may differ as time goes by, use git if you can</strong></strong> Or just look at this <a href="http://www.edwardrosten.com/cvd/toon.html">link</a> for more details.</p><p>Also remember <strong><strong>do refer to the README files when you try to install the libraries</strong></strong>, cause they really do help in some manner:–)</p><h3 id="toon"><strong>TooN</strong></h3><p>Just header files, easy to install huh?</p><pre><code>./configure &amp;&amp; make &amp;&amp; sudo make install
+</code></pre><h3 id="libcvd"><strong>libCVD</strong></h3><p>Remember that libCVD really needs TooN, or you will get stuck when trying to compile PTAM:–(</p><p>The steps I used is like this:</p><pre><code>./configure --without-ffmpeg --without-v4l1buffer --without-dc1394v1 --without-dc1394v2
+make
+sudo make install
+</code></pre><p>If you run into problems, check the output of <code>./configure</code> carefully, they will give you some hints:–)</p><h3 id="gvars3"><strong>Gvars3</strong></h3><p>This is also easy, like this:</p><pre><code>./configure --disable-widgets
+make
+make install
+</code></pre><h3 id="make-the-libs-work"><strong>Make the libs work</strong></h3><pre><code>sudo ldconfig
+</code></pre><h2 id="compilation-of-ptam"><strong>Compilation of PTAM</strong></h2><p>Now comes the real part of our journey, refer to the README.txt file for details.</p><h3 id="copy-the-appropriate-platform-build-files"><strong>Copy the appropriate platform build files</strong></h3><pre><code>cd PTAM
+cp Build/Linux/* .
+</code></pre><h3 id="edit-the-makefile-to-reference-custom-include-or-linker-paths"><strong>Edit the Makefile to reference custom include or linker paths</strong></h3><pre><code>LINKFLAGS = -L /usr/local/lib -lGvars3 -lcvd -lGLU -lGL -llapack
+</code></pre><p><code>/usr/local/lib</code> is my custom linker path.</p><h3 id="make-the-video-source-right"><strong>Make the Video Source right</strong></h3><ul><li>VideoSource_Linux_DV.cc</li><li>VideoSource_Linux_V4L.cc</li><li>VideoSource_Linux_Gstreamer_File.cc</li><li>VideoSource_Linux_OpenCV.cc</li></ul><p>The first two are for camera capturing and the last twos are shipped with <a href="https://github.com/BeLioN-github/PTAM">BeLioN-github/PTAM</a>and can be used to serve images from video files.</p><h3 id="make"><strong>Make</strong></h3><p>Probably an error will popup, like “error, <code>usleep</code> was not declared in this scope”, easily add</p><pre><code>#include &lt;unistd.h&gt;
+</code></pre><p>to <code>Tracker.cc</code> and you are done:–)</p><p>Just</p><pre><code>make
+</code></pre><p>and enjoy!</p><hr><h2 id="-">简单的补充</h2><h3 id="vieosource_linux_opencv-cc-"><em>VieoSource_Linux_OpenCV.cc</em>文件的修改</h3><p>文件中增加一行代码</p><pre><code>#include &lt;opencv2/opencv.hpp&gt;   
+</code></pre><h3 id="makefile-"><em>Makefile</em>文件的修改</h3><p>文件中修改到如下内容</p><pre><code>CC = g++
+COMPILEFLAGS = -I  /usr/local/include -D_LINUX -D_REENTRANT -Wall  -O3 -march=nocona -msse3
+LINKFLAGS = -L /usr/local/lib -lblas -lGVars3 -lcvd  -lglut -lGL -lGLU -lGLEW -llapack\
+
+# add OpenCV dependencies
+COMPILEFLAGS += $(shell pkg-config --cflags opencv)
+LINKFLAGS += $(shell pkg-config --libs opencv)
+
+</code></pre>
                 </div>
             </section>
 
@@ -192,9 +247,9 @@ ghost.init({
 </div>
                     <div class="read-next-card-content">
                         <ul>
-                            <li><a href="../ptam-compilation-on-linux-howto-bu-chong-nei-rong/">PTAM Compilation on Linux-HowTo 补充内容</a></li>
                             <li><a href="../eigen-matrixzai-yuan-you-da-xiao-shang-zeng-jia-lie/">Eigen Matrix在原有大小上增加列</a></li>
                             <li><a href="../nyuhei-ma-xiao-jie/">NYU黑马小结</a></li>
+                            <li><a href="../intel-galileo-gen2-you-xian-wang-luo-shang-wang/">Intel Galileo Gen2 有线网络上网</a></li>
                         </ul>
                     </div>
                     <footer class="read-next-card-footer">
@@ -202,52 +257,19 @@ ghost.init({
                     </footer>
                 </article>
 
-                <article class="post-card post tag-geek tag-zhong-wen-bo-ke">
-        <a class="post-card-image-link" href="../ecsshang-proftpdpei-zhi-fang-fa/">
-            <div class="post-card-image" style="background-image: url(../content/images/2018/08/cloud-1.jpeg)"></div>
+
+                <article class="post-card post tag-golang">
+        <a class="post-card-image-link" href="../go-the-usage-of-defer/">
+            <div class="post-card-image" style="background-image: url(../content/images/2018/08/golang-1.jpg)"></div>
         </a>
     <div class="post-card-content">
-        <a class="post-card-content-link" href="../ecsshang-proftpdpei-zhi-fang-fa/">
+        <a class="post-card-content-link" href="../go-the-usage-of-defer/">
             <header class="post-card-header">
-                    <span class="post-card-tags">geek</span>
-                <h2 class="post-card-title">ECS上proftpd配置方法</h2>
+                    <span class="post-card-tags">golang</span>
+                <h2 class="post-card-title">GO:The usage of 'defer'</h2>
             </header>
             <section class="post-card-excerpt">
-                <p>通过root身份登录，进行接下来的配置添加用户组、添加用户groupadd ftpusers useradd -d /mnt/site/site1 -g ftpusers -s /sbin/nologin weba passwd weba useradd -d /mnt/ftp -g ftpusers -s /sbin/nologin webb passwd webb 修改配置文件  proftpd.confDefaultRoot ~ &lt;</p>
-            </section>
-        </a>
-        <footer class="post-card-meta">
-
-            <ul class="author-list">
-                <li class="author-list-item">
-
-                    <div class="author-name-tooltip">
-                        Orange
-                    </div>
-
-                        <a href="../author/orange/" class="static-avatar author-profile-image"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"></path></g></svg>
-</a>
-                </li>
-            </ul>
-
-            <span class="reading-time">1 min read</span>
-
-        </footer>
-    </div>
-</article>
-
-                <article class="post-card post tag-geek tag-zhong-wen-bo-ke">
-        <a class="post-card-image-link" href="../untitled/">
-            <div class="post-card-image" style="background-image: url(../content/images/2018/08/arduino.jpg)"></div>
-        </a>
-    <div class="post-card-content">
-        <a class="post-card-content-link" href="../untitled/">
-            <header class="post-card-header">
-                    <span class="post-card-tags">geek</span>
-                <h2 class="post-card-title">Arduino 使用的一些细节问题</h2>
-            </header>
-            <section class="post-card-excerpt">
-                <p>使用Arduino在做实验的时候，遇到了一些问题，这里总结一下。MIDI 库从Arduino网上下载的MIDI库 在导入的时候应该先将解压出来的文件夹中的src文件夹的内容移到顶层，这样在导入之后，选择“skecth-&gt;import library-&gt;MIDI”才会自动导入头文件。在使用MIDI库的时候，需要设置一下串口的波特率。这个很重要。例如，导入example里的 MIDI_Basic_IO 例子，虽然可以编译下载，但是，在使用 HairlessMIDI进行播放声音的时候是没有声音的，需要在例子的setup()函数最后添加一句设置串口波特率的语句。最终例子代码应当如下：#include &lt;</p>
+                <p>defer	is very useful in control. It is used within a function.If a function contains one or multiple defer	command, it will not really return or finish unless all the functions followed</p>
             </section>
         </a>
         <footer class="post-card-meta">
@@ -281,16 +303,16 @@ ghost.init({
         </a>
     </div>
     <span class="floating-header-divider">—</span>
-    <div class="floating-header-title">阿里云ECS数据磁盘挂载</div>
+    <div class="floating-header-title">PTAM Compilation on Linux-HowTo 补充内容</div>
     <div class="floating-header-share">
         <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"></path>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%E9%98%BF%E9%87%8C%E4%BA%91ECS%E6%95%B0%E6%8D%AE%E7%A3%81%E7%9B%98%E6%8C%82%E8%BD%BD&amp;url=http://localhost:2368/a-li-yun-ecsshu-ju-ci-pan-gua-zai/" onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=PTAM%20Compilation%20on%20Linux-HowTo%20%E8%A1%A5%E5%85%85%E5%86%85%E5%AE%B9&amp;url=http://localhost:2368/ptam-compilation-on-linux-howto-bu-chong-nei-rong/" onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg>
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/a-li-yun-ecsshu-ju-ci-pan-gua-zai/" onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/ptam-compilation-on-linux-howto-bu-chong-nei-rong/" onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
         </a>
     </div>
